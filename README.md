@@ -55,11 +55,17 @@ In order to send traffic to the Database Subnet Allow outbound traffic on Port 5
 ### Create Database NACL rules 
 
 ### Inbound Database NACL rules
-Allow Ingress 5432 for local VPC traffic, so EC2 instances in the Private Subnet can communicate to the database
+Allow Ingress traffic on port 5432 for IPv4/6 VPC traffic, so EC2 instances in the Private Subnet can communicate to the database
+Also, allow IPv4/6 traffic on ephemeral ports 1024 - 65535 to receive responses from the WebServer
+
+![Create Inbound Database Subnet NACL Rules](./assets/DatabaseSubnetNACL.png)
 
 ### Outbound Database NACL rules
-In order for the database to send responses ephemeral Ports 1024-65535 need to be opened outbound for local VPC traffic
+In order for the database to send responses ephemeral Ports 1024-65535 need to be opened outbound for Ipv4/6 traffic
 
+![Create Outbound Database Subnet NACL Rules](./assets/DatabaseSubnetNACLOutBound.png)
+
+![Associate Database Subnet NACL to Database Subnets](./assets/DatabaseSubnetNACLAssoc.png)
 
 ### Security Groups - are applied directly to the instances, security groups are stateful, they do recognize sessions
 We can specify just ingress rules, you can only specify allow rules, no deny rules, all inbound traffic is denied by default and all outbound is allowed. Specify Protocol and source IP/Port range
