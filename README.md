@@ -8,4 +8,4 @@ Visual Representation of a 3-Tier Application Architecture on AWS
 ### DataStore Tier - A PostgreSQL running in a Private Subnet, All traffic in this subnet is completely local to the VPC
 
 
-![The Architecture Diagram]()
+![The Architecture Diagram](./assets/Classic-3Tier-App%20(1).jpeg)
