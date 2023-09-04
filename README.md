@@ -83,10 +83,18 @@ Hardwire this load balancer to only communicate with the WebServers Security Gro
 
 ### Outbound ALB Security Group Rules
 
-![Create Inbound Security Group Rules](./assets/OutboundAlbSG.png)
+![Create Outbound Security Group Rules](./assets/OutboundAlbSG.png)
 
 ### WebServerSG
 Only allowed to receive ephemeral Ports 1024 - 65535 from the ALB SG
+
+### Inbound WebServer Security Group Rules
+
+![Create Inbound Security Group Rules](./assets/WebServerSG.png)
+
+### Outbound WebServer Security Group Rules
+
+![Create Outbound Security Group Rules](./assets/OutboundWebServerSG.png)
 
 ### DatabaseSG
 Allow inbound 5432 from only the WebserverSG (Using security group references)
