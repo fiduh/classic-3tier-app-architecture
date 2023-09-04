@@ -77,6 +77,14 @@ Allow inbound TCP on Port 80/443 from the Internet - 0.0.0.0/0 & ::/0
 Allow outbound ephemeral Ports 1024-65535 to the WebServer Security Group
 Hardwire this load balancer to only communicate with the WebServers Security Group
 
+### Inbound ALB Security Group Rules
+
+![Create Inbound Security Group Rules](./assets/AlbSG.png)
+
+### Outbound ALB Security Group Rules
+
+![Create Inbound Security Group Rules](./assets/OutboundAlbSG.png)
+
 ### WebServerSG
 Only allowed to receive ephemeral Ports 1024 - 65535 from the ALB SG
 
