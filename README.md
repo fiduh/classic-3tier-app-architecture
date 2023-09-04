@@ -41,11 +41,16 @@ Open Port 80/443 so the NAT can send outbound IPv4 traffic - 0.0.0.0/0
 
 ### Inbound Private NACL rules
 
-In order for EC2 instances to receive traffic from the Database Subnet you need to open ingress ephemeral Ports 1024-65535 for local VPC traffic
+In order for EC2 instances to receive traffic from the Database Subnet you need to open ingress ephemeral Ports 1024-65535 for IPv4/6 traffic - 0.0.0.0/0, ::/0
+Also, allow inbound IPv4/6 traffic on ports 443 and 80
 
+![Create Inbound Private Subnet NACL Rules](./assets/PrivateSubnetNACL.png)
 
 ### Outbound Private NACL rules
-In order to send traffic to the Database Subnet Allow egress on Port 5432 for the local VPC traffic
+In order to send traffic to the Database Subnet Allow outbound traffic on Port 5432 for IPv4/6
+![Create Outbound Private Subnet NACL Rules](./assets/PrivateSubnetNACLOutBound.png)
+
+![Associate Private Subnet NACL to Private Subnets](./assets/PrivateSubnetNACLAssoc.png)
 
 ### Create Database NACL rules 
 
